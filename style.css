@@ -95,6 +95,7 @@ header {
   display: flex;
   align-items: center;
   transition: 0.3s;
+  z-index: 100;
 }
 /* css reusable code */
 .container {
@@ -317,4 +318,47 @@ header.scrolled .logo {
 .showcase-area .shapes .right-shape {
   margin-right: 2rem;
   margin-left: 0;
+}
+
+.section {
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  height: 45rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section .about-cta {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.section .about-cta div {
+  width: calc(80%/3);
+  height: 80%;
+  border-radius: 10px;
+  border: 2px solid var(--color-button-bg);
+}
+.section .about-cta div h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.section .about-cta div h2 span {
+  color: var(--color-button-bg);
+}
+.section .about-cta div p {
+  padding: 1rem;
+  color: var(--color-text-primary);
+}
+.section .about-cta div svg {
+  opacity: 0.4;
+}
+.section .about-cta .Achievements {
+  transform: translateY(-3rem);
 }
