@@ -231,7 +231,7 @@ header.scrolled .logo {
 }
 .showcase-area .container {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   height: calc(100vh - 120px);
   max-height: 600px;
   align-items: center;
@@ -299,7 +299,7 @@ header.scrolled .logo {
 .showcase-image {
   height: 100%;
   width: 100%;
-  background-image: url(/assets/best-friends-enjoying-time-together.jpg);
+  background-image: url('assets/best-friends-enjoying-time-together.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -316,5 +316,5 @@ header.scrolled .logo {
 }
 .showcase-area .shapes .right-shape {
   margin-right: 2rem;
-  margin-left:0;
+  margin-left: 0;
 }
