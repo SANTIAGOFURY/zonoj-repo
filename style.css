@@ -345,7 +345,7 @@ header.scrolled .logo {
 }
 .section .about-cta div h2 {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 .section .about-cta div h2 span {
@@ -354,6 +354,7 @@ header.scrolled .logo {
 .section .about-cta div p {
   padding: 1rem;
   color: var(--color-text-primary);
+  font-size: 1rem;
 }
 .section .about-cta div svg {
   opacity: 0.4;
@@ -413,6 +414,7 @@ header.scrolled .logo {
   text-align: center;
   margin-top: 3.5rem;
   color: var(--color-text-primary);
+  font-size: 1rem;
 }
 .members .overview-section div h3 span {
   color: var(--color-text-secondary);
@@ -421,6 +423,7 @@ header.scrolled .logo {
 .members .overview-section div p {
   padding: 1rem;
   color: var(--color-text-secondary);
+  font-size: 1rem;
 }
 .members .overview-section div .bnts {
   position: absolute;
