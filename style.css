@@ -1,0 +1,320 @@
+/* =================================================== */
+/* =============== 💠 GOOGLE FONTS 💠 ================= */
+/* =================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap");
+/* =================================================== */
+/* ========== 🖱️ CUSTOM SCROLLBAR STYLES ============ */
+/* =================================================== */
+/* 🧙 Scrollbar Magic - Chrome, Edge, Safari only */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  z-index: 467;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 255, 0.397); /* Scroll track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gold; /* Scroll thumb */
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px var(--box-shadow-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--btn-hover-bg); /* Thumb on hover */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: var(--btn-bg);
+}
+
+/* =================================================== */
+/* ============== 🔧 GLOBAL RESET 🔧 ================== */
+/* =================================================== */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+}
+
+/* =================================================== */
+/* ============= 🎨 COLOR VARIABLES 🎨 ================ */
+/* =================================================== */
+/* 3. Dark Mode */
+:root {
+  --color-primary: #2e1a47; /* Deep dark purple */
+  --color-secondary: #7c3aed; /* Vibrant purple */
+  --color-background: #1b122f; /* Very dark purple/indigo */
+
+  --color-text-primary: #d8c9ff; /* Light lavender */
+  --color-text-secondary: #a293c7; /* Soft muted purple */
+
+  --color-accent: #9b59b6; /* Medium purple accent */
+
+  --color-button-bg: #7c3aed; /* Vibrant purple button */
+  --color-button-hover: #5e2ca5; /* Darker purple hover */
+
+  --color-link: #9b59b6; /* Purple links */
+  --color-link-hover: #6f42c1; /* Slightly deeper purple */
+
+  --color-header-bg: #2e1a47; /* Same as primary for header */
+  --color-nav-bg: #3a2560; /* Dark purple for nav background */
+  --color-aside-bg: #3b2760; /* Slightly lighter dark purple */
+  --color-main-bg: #1b122f; /* Very dark purple background */
+}
+::selection {
+  background-color: #7c3aed; /* Vibrant purple (same as button) */
+  color: #ffffff; /* White text on selection */
+}
+body {
+  background-color: var(--color-background);
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-header-bg);
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+/* css reusable code */
+.container {
+  width: 100%;
+  max-width: 75rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+.logo {
+  margin-right: 1.5rem;
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5rem;
+  color: var(--color-button-bg);
+  letter-spacing: 1px;
+  transition: all 300ms;
+}
+.sub-heading {
+  color: var(--color-text-primary);
+  letter-spacing: 0.4px;
+  font-size: 0.85rem;
+  padding: 0.13rem 0.75rem;
+  border-left: 2px solid gold;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.heading {
+  color: var(--color-text-secondary);
+  font-size: 3rem;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.text {
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  margin: 2rem 0;
+}
+/* nav bar styling */
+nav.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.links {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo span {
+  color: var(--color-text-primary);
+}
+header .logo {
+  height: 120px;
+  line-height: 120px;
+}
+.nav-link {
+  display: inline-block;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--color-link);
+  opacity: 0.9;
+  transition: 0.3s;
+  position: relative;
+  z-index: 20;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-link:hover {
+  color: var(--color-link-hover);
+}
+.nav-link::after {
+  content: "";
+  width: 0;
+  background-color: var(--color-aside-bg);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.nav-link:hover::after {
+  opacity: 0.3;
+  width: 100%;
+}
+.toggle-btn {
+  color: var(--color-text-primary);
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #a293c792;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 0 5px #7c3aed;
+  transition: 0.3s;
+}
+.toggle-btn:hover {
+  filter: brightness(85%);
+}
+
+header.scrolled {
+  box-shadow: 0 5px 20px 0.1px rgba(255, 255, 255, 0.1);
+  background-color: #2e1a4793; /* fallback color */
+  backdrop-filter: blur(20px);
+}
+
+header.scrolled .logo {
+  height: 80px;
+  line-height: 80px;
+}
+
+/* show case area styling  */
+.showcase-area {
+  padding: 120px 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.showcase-area .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  height: calc(100vh - 120px);
+  max-height: 600px;
+  align-items: center;
+
+  column-gap: 5rem;
+  width: 100%;
+}
+.showcase-area .sub-heading {
+  margin-bottom: 0.7rem;
+}
+.showcase-area .heading {
+  font-size: 3.5rem;
+}
+.showcase-area .text {
+  margin: 0.8rem 0;
+}
+.cta {
+  display: flex;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+.cta .btn {
+  margin-right: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  border-radius: 17px;
+  color: #fff;
+  background-color: var(--color-button-bg);
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  transition: 300ms;
+}
+.btn:hover {
+  background-color: var(--color-button-hover);
+}
+.btn.second-btn {
+  position: relative;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  border-bottom: 2.5px solid var(--color-button-bg);
+  border-radius: 0px;
+  padding: 0.15rem 0;
+}
+
+.btn.second-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  background-color: gold;
+  width: 0%;
+  height: 3px;
+  opacity: 0;
+  transition: 300ms ease-in-out;
+}
+.btn.second-btn:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+.showcase-image {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/best-friends-enjoying-time-together.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5rem;
+  border-radius: 20px;
+}
+.showcase-area .shapes svg {
+  width: 5rem;
+  width: 6rem;
+  display: block;
+  margin-top: 12rem;
+  margin-left: 2rem;
+  color: red;
+}
+.showcase-area .shapes .right-shape {
+  margin-right: 2rem;
+  margin-left:0;
+}
