@@ -49,3 +49,17 @@ gsap.utils.toArray(".about-cta .card").forEach((card, i) => {
     },
   });
 });
+gsap.utils.toArray(".overview-section > div").forEach((member, i) => {
+  gsap.from(member, {
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    delay: i * 0.15, // stagger effect
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: member,
+      start: "top 85%",
+      toggleActions: "play none none reset",
+    },
+  });
+});
