@@ -339,7 +339,7 @@ header.scrolled .logo {
 }
 .section .about-cta div {
   width: calc(80% / 3);
-  height: 60%;
+  height: 70%;
   border-radius: 10px;
   border: 2px solid var(--color-button-bg);
 }
@@ -357,9 +357,11 @@ header.scrolled .logo {
   font-size: 1rem;
 }
 .section .about-cta div svg {
-  opacity: 0.4;
+  opacity: 0.2;
   width: 10rem;
   width: 15rem;
+  position: absolute;
+  bottom: -8rem;
 }
 .section .about-cta .Achievements {
   transform: translateY(-3rem);
@@ -423,7 +425,7 @@ header.scrolled .logo {
 .members .overview-section div p {
   padding: 1rem;
   color: var(--color-text-secondary);
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .members .overview-section div .bnts {
   position: absolute;
