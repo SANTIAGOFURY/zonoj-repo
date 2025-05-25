@@ -65,38 +65,21 @@ gsap.utils.toArray(".overview-section > div").forEach((member, i) => {
 });
 // ...existing code...
 
-// ...existing code...
+// Animate .mission cards on scroll
+gsap.registerPlugin(ScrollTrigger);
 
-// Animate .mission cards with scale and rotation effect
-gsap.utils.toArray('.missions-section .mission').forEach((mission, i) => {
+gsap.utils.toArray('.mission').forEach((mission, i) => {
   gsap.from(mission, {
     opacity: 0,
-    scale: 0.8,
-    rotate: -5,
-    duration: 1,
-    delay: i * 0.12,
-    ease: "back.out(1.7)",
+    y: 50,
+    duration: 0.8,
+    delay: i * 0.1,
     scrollTrigger: {
       trigger: mission,
-      start: "top 85%",
-      toggleActions: "play none none reset"
+      start: "top 80%",
+      toggleActions: "play none none none"
     }
   });
 });
 
 // ...existing code...
-// ...existing code...
-
-// Animate missions h1 word by word
-gsap.from(".missions h1 span", {
-  opacity: 0,
-  y: 30,
-  duration: 0.7,
-  stagger: 0.25,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".missions h1",
-    start: "top 85%",
-    toggleActions: "play none none reset"
-  }
-});
