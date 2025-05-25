@@ -100,3 +100,34 @@ gsap.from(".missions h1 span", {
     toggleActions: "play none none reset"
   }
 });
+gsap.from(".info h1 span", {
+  opacity: 0,
+  y: 30,
+  duration: 0.7,
+  stagger: 0.25,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".missions h1",
+    start: "top 85%",
+    toggleActions: "play none none reset",
+  },
+});
+// Animate info blobs with floating, scaling, and rotation for a lively effect
+gsap.to(".info .blob1", {
+  y: 40,
+  scale: 1.08,
+  rotate: 14,
+  duration: 4,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
+gsap.to(".info .blob2", {
+  y: -40,
+  scale: 0.92,
+  rotate: -13,
+  duration: 4.5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});

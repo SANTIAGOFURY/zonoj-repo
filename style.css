@@ -555,9 +555,10 @@ header.scrolled .logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-main {
+.info main {
   display: grid;
   grid-template-columns: repeat(var(--count, 1), 1fr);
   gap: var(--space);
@@ -575,7 +576,7 @@ main {
   }
 }
 
-.card {
+.info main .card {
   position: relative;
   overflow: hidden;
   display: grid;
@@ -586,6 +587,7 @@ main {
   isolation: isolate;
   transition: border-color 200ms var(--ease-out);
   user-select: none;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -644,4 +646,26 @@ main {
   &:hover::after {
     opacity: 1;
   }
+}
+
+.info h1 {
+  flex: none;
+  position: absolute;
+  top: 5rem;
+  color: var(--color-text-primary);
+}
+
+.info svg {
+  flex: none;
+  width: 30rem;
+  position: absolute;
+  z-index: -1;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.info .blob1 {
+  left: -7rem;
+}
+.info .blob2 {
+  right: -7rem;
 }
