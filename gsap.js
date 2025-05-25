@@ -131,3 +131,37 @@ gsap.to(".info .blob2", {
   yoyo: true,
   ease: "sine.inOut"
 });
+
+const wavePath = document.getElementById("wavePath");
+
+const wave1 = "M0,160 C480,360 960,-40 1440,160 L1440,320 L0,320 Z";
+const wave2 = "M0,120 C480,-40 960,360 1440,120 L1440,320 L0,320 Z";
+const wave3 = "M0,200 C480,-80 960,400 1440,200 L1440,320 L0,320 Z";
+
+
+  wavePath.setAttribute("d", wave1); // Start with first shape
+
+  const animateWave = () => {
+    gsap.to(wavePath, {
+      duration: 2,
+      attr: { d: wave2 },
+      ease: "power1.inOut",
+      onComplete: () => {
+        gsap.to(wavePath, {
+          duration: 2,
+          attr: { d: wave3 },
+          ease: "power1.inOut",
+          onComplete: () => {
+            gsap.to(wavePath, {
+              duration: 2,
+              attr: { d: wave1 },
+              ease: "power1.inOut",
+              onComplete: animateWave // loop
+            });
+          }
+        });
+      }
+    });
+  };
+
+  animateWave(); // Start animation

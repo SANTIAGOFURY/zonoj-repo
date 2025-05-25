@@ -669,3 +669,64 @@ header.scrolled .logo {
 .info .blob2 {
   right: -7rem;
 }
+
+footer {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  background: transparent;
+}
+
+#wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+footer .contact {
+  width: 50rem;
+  height: 4rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 34;
+  top: 5.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+footer .contact h3 {
+  color: var(--color-text-primary);
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 1px;
+  transform: translateX(-5rem);
+}
+footer .contact svg {
+  width: 2rem;
+}
+.TB-btn {
+  background-color: var(--color-text-primary);
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 2%;
+  border: none;
+  right: 1rem;
+  z-index: 56;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  color: var(--color-main-bg);
+}
+.TB-btn:active {
+  border: 3px solid #fff;
+}
+footer .contact .CP {
+  flex: none;
+  position: absolute;
+  right: -15rem;
+  color: #fff;
+}
