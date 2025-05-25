@@ -45,7 +45,9 @@
   font-family: Poppins, sans-serif;
 }
 /* Hide vertical scrollbar for missions-section */
-
+.missions .missions-section::-webkit-scrollbar {
+  display: none;
+}
 /* =================================================== */
 /* ============= 🎨 COLOR VARIABLES 🎨 ================ */
 /* =================================================== */
@@ -720,6 +722,12 @@ footer .contact svg {
   transition: 0.1s ease-in-out;
   cursor: pointer;
   color: var(--color-main-bg);
+}
+.TB-btn span {
+  transition: transform 300ms ease-in-out;
+}
+body.shrink .TB-btn span {
+  transform: rotate(180deg);
 }
 .TB-btn:active {
   border: 3px solid #fff;
