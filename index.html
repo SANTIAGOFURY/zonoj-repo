@@ -18,12 +18,12 @@
         <a class="logo" href="">ZONOJ<span>.</span></a>
         <div class="links">
           <ul>
-            <li><a href="" class="nav-link">Home</a></li>
-            <li><a href="" class="nav-link">About</a></li>
-            <li><a href="" class="nav-link">Members</a></li>
-            <li><a href="" class="nav-link">Missions</a></li>
-            <li><a href="" class="nav-link">Info</a></li>
-            <li><a href="" class="nav-link">Contact</a></li>
+            <li><a href="#showcase" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#members" class="nav-link">Members</a></li>
+            <li><a href="#missions" class="nav-link">Missions</a></li>
+            <li><a href="#info" class="nav-link">Info</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
           <div class="toggle-btn">
             <span class="material-symbols-outlined">nights_stay</span>
@@ -33,7 +33,7 @@
     </header>
 
     <main>
-      <div class="showcase-area">
+      <div class="showcase-area" id="showcase">
         <div class="shapes">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -88,7 +88,7 @@
       </div>
     </main>
 
-    <section class="about section">
+    <section class="about section" id="about">
       <div class="about-cta">
         <div class="vision card">
           <h2>Our <span>Vision</span></h2>
@@ -157,7 +157,7 @@
       </div>
     </section>
 
-    <div class="members">
+    <div class="members" id="members">
       <div class="overview-section">
         <div class="Ibrahim">
           <div class="profile"></div>
@@ -245,7 +245,7 @@
         </div>
       </div>
     </div>
-    <section class="missions">
+    <section class="missions" id="missions">
       <h1>
         <span>Look</span> <span>Forward</span> <span>our</span>
         <span>Missions</span> <span>.</span>
@@ -369,7 +369,7 @@
         <span class="material-symbols-outlined"> chevron_right </span>
       </button>
     </section>
-    <section class="info">
+    <section class="info" id="info">
       <h1>
         <span>More</span> <span>Informations</span> <span>About</span>
         <span>Us</span> <span>...</span>
@@ -471,9 +471,11 @@
       </svg>
     </section>
     <button id="topBottom_btn" class="top-bottom-btn TB-btn">
-      <span id="topBottom_btn_span" class="material-symbols-outlined"> stat_3 </span>
+      <span id="topBottom_btn_span" class="material-symbols-outlined">
+        stat_3
+      </span>
     </button>
-    <footer>
+    <footer id="contact">
       <div class="contact">
         <h3>Made it with love By Said BOUAZIZ</h3>
         <div class="links-div">
@@ -567,6 +569,30 @@
         <path id="wavePath" fill="#6c63ff" d="" />
       </svg>
     </footer>
+    <!-- Contact Popup -->
+    <div id="contact-popup" class="contact-popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Contact Member</h2>
+        <!-- Contact form or content here -->
+      </div>
+    </div>
+
+    <!-- More Popup -->
+    <div id="more-popup" class="more-popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>More About Member</h2>
+        <!-- More info content here -->
+      </div>
+    </div>
+    <div id="details-popup" class="details-popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Mission Details</h2>
+        <p>This is where you can show more information about the mission.</p>
+      </div>
+    </div>
     <!-- GSAP and scripts -->
     <script
       src="https://kit.fontawesome.com/3c9043f609.js"

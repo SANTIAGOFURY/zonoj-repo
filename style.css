@@ -12,7 +12,9 @@
   height: 6px;
   z-index: 467;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 255, 0.397); /* Scroll track */
   border-radius: 10px;
@@ -82,6 +84,11 @@
   --color-aside-bg: #3b2760; /* Slightly lighter dark purple */
   --color-main-bg: #1b122f; /* Very dark purple background */
 }
+:root,
+body {
+  transition: background-color 3s, color 3ms, border-color 3s, box-shadow 3ms;
+}
+
 ::selection {
   background-color: #7c3aed; /* Vibrant purple (same as button) */
   color: #ffffff; /* White text on selection */
@@ -726,8 +733,11 @@ footer .contact svg {
 .TB-btn span {
   transition: transform 300ms ease-in-out;
 }
-body.shrink .TB-btn span {
+body.shrink1 .TB-btn span {
   transform: rotate(180deg);
+}
+body.shrink2 .TB-btn span {
+  transform: rotate(-180deg);
 }
 .TB-btn:active {
   border: 3px solid #fff;
@@ -737,4 +747,74 @@ body.shrink .TB-btn span {
 }
 footer .contact .CP {
   color: #fff;
+}
+
+.contact-popup,
+.more-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 19, 56, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms;
+  z-index: 9999;
+}
+.contact-popup.active,
+.more-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.more-popup .popup-content,
+.contact-popup .popup-content {
+  background: var(--color-background, #fff);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  min-width: 320px;
+  max-width: 90vw;
+  animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+  position: relative;
+}
+.details-popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 19, 56, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms;
+  z-index: 9999;
+}
+.details-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.details-popup .popup-content {
+  background: var(--color-background, #fff);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  min-width: 320px;
+  max-width: 90vw;
+  animation: popupIn 0.4s cubic-bezier(.4,2,.6,1);
+  position: relative;
+}
+.details-popup .close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 2rem;
+  color: var(--color-text-primary, #6d28d9);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.details-popup .close-btn:hover {
+  color: #ff0066;
 }
