@@ -749,7 +749,140 @@ footer .contact .CP {
   color: #fff;
 }
 
-.contact-popup,
+.contact-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 19, 56, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms;
+  z-index: 9999;
+}
+.contact-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.contact-popup .popup-content {
+  background: var(--color-main-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 1);
+  min-width: 30rem;
+  max-width: 40rem;
+  height: 30rem;
+  animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+  position: relative;
+}
+.contact-popup .popup-content h2 {
+  color: var(--color-text-primary);
+  font-size: 1.3rem;
+  text-align: center;
+}
+.contact-popup .popup-content p {
+  font-size: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-top: 7px;
+}
+.contact-popup .popup-content form {
+  width: 100%;
+  margin-top: 1rem;
+  height: 23rem;
+}
+form .form-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+form .form-top input {
+  width: 30%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid gold;
+  color: #fff;
+}
+form .form-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+form .form-center input {
+  width: 70%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid gold;
+  color: #fff;
+}
+form .form-bottom {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .form-bottom textarea {
+  width: 80%;
+  height: 12rem;
+  resize: none;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid gold;
+}
+form .form-end {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .form-end button {
+  width: 95%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: var(--color-button-bg);
+  border: 2px solid gold;
+  transition: 300ms;
+  cursor: pointer;
+}
+form .form-end button:active {
+  border: 3px solid #fff;
+}
+form .form-end button:hover {
+  background-color: gold;
+  color: black;
+  font-weight: 500;
+}
+.contact-popup .popup-content span {
+  font-size: 30px;
+  color: var(--color-text-primary);
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  top: 0.4rem;
+}
 .more-popup {
   position: fixed;
   top: 0;
@@ -765,13 +898,11 @@ footer .contact .CP {
   transition: opacity 400ms;
   z-index: 9999;
 }
-.contact-popup.active,
 .more-popup.active {
   opacity: 1;
   pointer-events: auto;
 }
-.more-popup .popup-content,
-.contact-popup .popup-content {
+.more-popup .popup-content {
   background: var(--color-background, #fff);
   padding: 2rem;
   border-radius: 1rem;
@@ -781,9 +912,97 @@ footer .contact .CP {
   animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
   position: relative;
 }
+.more-popup .popup-content {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.more-popup .popup-content .member-card {
+  display: flex;
+  gap: 2rem;
+  background: transparent;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  border: 2px solid gold;
+  transition: transform 0.3s ease;
+}
+
+.more-popup .popup-content .member-card:hover {
+  transform: translateY(-5px);
+}
+
+.more-popup .popup-content .member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
+.more-popup .popup-content .member-details {
+  flex: 1;
+}
+
+.more-popup .popup-content .member-details h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.more-popup .popup-content .member-details h4 {
+  margin: 0.5rem 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.more-popup .popup-content .member-details p {
+  margin: 0.8rem 0;
+  color: #8b96a5;
+  line-height: 1.6;
+}
+
+.more-popup .popup-content .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.more-popup .popup-content .skills span {
+  background: #e2e8f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #1e293b;
+}
+
+.more-popup .popup-content .social-links {
+  margin-top: 1rem;
+}
+
+.more-popup .popup-content .social-links a {
+  margin-right: 0.7rem;
+  color: #3b82f6;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.more-popup .popup-content .social-links a:hover {
+  color: #2563eb;
+}
+.more-popup .popup-content .social-links a svg {
+  width: 2rem;
+}
 .details-popup {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(44, 19, 56, 0.6);
   display: flex;
   align-items: center;
@@ -801,15 +1020,16 @@ footer .contact .CP {
   background: var(--color-background, #fff);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   min-width: 320px;
   max-width: 90vw;
-  animation: popupIn 0.4s cubic-bezier(.4,2,.6,1);
+  animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
   position: relative;
 }
 .details-popup .close-btn {
   position: absolute;
-  top: 1rem; right: 1rem;
+  top: 1rem;
+  right: 1rem;
   font-size: 2rem;
   color: var(--color-text-primary, #6d28d9);
   cursor: pointer;
