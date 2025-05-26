@@ -98,3 +98,99 @@ const memberSocials = {
     { href: "https://github.com/said", icon: "github" },
   ],
 };
+
+const toggleBtn = document.querySelector(".toggle-btn");
+
+if (!toggleBtn) {
+  console.error("Toggle button not found.");
+}
+
+const themes = {
+  purple: {
+    "--color-primary": "#0f1e13",
+    "--color-secondary": "#1e5f3f",
+    "--color-background": "#0b1a10",
+    "--box-shadow-light": "0 4px 12px rgba(0, 255, 128, 0.2)",
+    "--box-shadow-dark": "0 4px 12px rgba(0, 255, 128, 0.4)",
+    "--ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
+    "--color-text-primary": "#d0f5e1",
+    "--black-dark-box-shadow": "rgba(0, 64, 32, 0.8)",
+    "--color-text-secondary": "#a4c8b0",
+    "--color-accent": "#21c064",
+    "--header-scrolled": "#1a3323",
+    "--color-button-bg": "#21c064",
+    "--popup-bg": "rgba(16, 32, 24, 0.9)",
+    "--color-button-hover": "#1aa054",
+    "--color-link": "#30d075",
+    "--reset-color": "#e8f5e9",
+    "--color-link-hover": "#2bb36b",
+    "--color-header-bg": "#0f1e13",
+    "--color-nav-bg": "#152c1f",
+    "--color-aside-bg": "#1b3a2b",
+    "--color-main-bg": "#0b1a10",
+    "--color-border": "#245c3e",
+    "--color-footer-wave": "#0a1c11",
+  },
+  orange: {
+    "--color-primary": "#2b1b0f",
+    "--color-secondary": "#ff8c42",
+    "--color-background": "#1a1007",
+    "--box-shadow-light": "0 4px 12px rgba(255, 165, 0, 0.2)",
+    "--box-shadow-dark": "0 4px 12px rgba(255, 140, 0, 0.4)",
+    "--ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
+    "--color-text-primary": "#ffe8d6",
+    "--color-text-secondary": "#ffcba4",
+    "--color-accent": "#ff7f50",
+    "--header-scrolled": "#3e2614",
+    "--color-button-bg": "#ff8c42",
+    "--popup-bg": "rgba(32, 20, 10, 0.9)",
+    "--color-button-hover": "#e6762f",
+    "--color-link": "#ff9f66",
+    "--reset-color": "#fff3e0",
+    "--color-link-hover": "#ff7f3f",
+    "--color-header-bg": "#2b1b0f",
+    "--color-nav-bg": "#3c2412",
+    "--color-aside-bg": "#442912",
+    "--color-main-bg": "#1a1007",
+    "--color-border": "#553319",
+    "--color-footer-wave": "#1c1106",
+  },
+  red: {
+    "--color-primary": "#290000",
+    "--color-secondary": "#8b0000",
+    "--color-background": "#140000",
+    "--box-shadow-light": "0 4px 12px rgba(255, 0, 0, 0.2)",
+    "--box-shadow-dark": "0 4px 12px rgba(255, 0, 0, 0.4)",
+    "--ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
+    "--color-text-primary": "#ffdddd",
+    "--color-text-secondary": "#ffaaaa",
+    "--color-accent": "#ff4444",
+    "--header-scrolled": "#400000",
+    "--color-button-bg": "#d10000",
+    "--popup-bg": "rgba(40, 0, 0, 0.9)",
+    "--color-button-hover": "#a00000",
+    "--color-link": "#ff3333",
+    "--reset-color": "#ffeeee",
+    "--color-link-hover": "#cc0000",
+    "--color-header-bg": "#290000",
+    "--color-nav-bg": "#3a0000",
+    "--color-aside-bg": "#4d0000",
+    "--color-main-bg": "#140000",
+    "--color-border": "#990000",
+    "--color-footer-wave": "#1a0000",
+  },
+};
+
+const themeKeys = Object.keys(themes);
+let currentThemeIndex = 0;
+
+toggleBtn?.addEventListener("click", () => {
+  currentThemeIndex = (currentThemeIndex + 1) % themeKeys.length;
+  const selectedTheme = themes[themeKeys[currentThemeIndex]];
+  for (const variable in selectedTheme) {
+    document.documentElement.style.setProperty(
+      variable,
+      selectedTheme[variable]
+    );
+  }
+});
