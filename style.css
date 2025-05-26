@@ -54,7 +54,7 @@ html {
 /* ============= 🎨 COLOR VARIABLES 🎨 ================ */
 /* =================================================== */
 /* 3. Dark Mode */
-:root {
+/* :root {
   --color-primary: #2e1a47;
   --color-secondary: #7c3aed;
   --color-background: #1b122f;
@@ -85,14 +85,14 @@ html {
   --color-main-bg: #1b122f;
   --color-border: #4b3b67;
   --color-footer-wave: #2a1842;
-}
+} */
 :root,
 body {
   transition: background-color 3s, color 3ms, border-color 3s, box-shadow 3ms;
 }
 
 ::selection {
-  background-color: #7c3aed; /* Vibrant purple (same as button) */
+  background-color: #7c3aed; /* 
   color: #ffffff; /* White text on selection */
 }
 body {

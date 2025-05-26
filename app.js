@@ -106,7 +106,7 @@ if (!toggleBtn) {
 }
 
 const themes = {
-  purple: {
+  green: {
     "--color-primary": "#0f1e13",
     "--color-secondary": "#1e5f3f",
     "--color-background": "#0b1a10",
@@ -130,6 +130,38 @@ const themes = {
     "--color-main-bg": "#0b1a10",
     "--color-border": "#245c3e",
     "--color-footer-wave": "#0a1c11",
+  },
+  purple: {
+    "--color-primary": "#2e1a47",
+    "--color-secondary": "#7c3aed",
+    "--color-background": "#1b122f",
+    "--space": "1rem",
+    "--bg": "#09090b",
+    "--fg": "#e3e3e3",
+    "--surface-1": "#101012",
+    "--surface-2": "#27272a",
+    "--surface-3": "#52525b",
+    "--ease-out": "cubic-bezier(0.5, 1, 0.89, 1)",
+    "--box-shadow-light": "0 4px 12px rgba(255, 255, 255, 0.1)",
+    "--box-shadow-dark": "0 4px 12px rgba(0, 0, 0, 0.6)",
+    "--ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
+    "--color-text-primary": "#d8c9ff",
+    "--black-dark-box-shadow": "rgba(0, 0, 0, 1)",
+    "--color-text-secondary": "#a293c7",
+    "--color-accent": "#9b59b6",
+    "--header-scrolled": "#543679c8",
+    "--color-button-bg": "#7c3aed",
+    "--popup-bg": "rgba(44, 19, 56, 0.6)",
+    "--color-button-hover": "#5e2ca5",
+    "--color-link": "#9b59b6",
+    "--reset-color": "#ffffff",
+    "--color-link-hover": "#6f42c1",
+    "--color-header-bg": "#2e1a47",
+    "--color-nav-bg": "#3a2560",
+    "--color-aside-bg": "#3b2760",
+    "--color-main-bg": "#1b122f",
+    "--color-border": "#4b3b67",
+    "--color-footer-wave": "#2a1842",
   },
   orange: {
     "--color-primary": "#2b1b0f",
