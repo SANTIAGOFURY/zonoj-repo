@@ -225,7 +225,7 @@ class PixelCanvas extends HTMLElement {
   }
 
   onmouseenter() {
-    console.log("Event Fired"); // You can remove or keep this line
+    console.log("Event Fired"); 
     cancelAnimationFrame(this.animation);
     this.animation = this.animate("appear");
   }
