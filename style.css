@@ -500,6 +500,7 @@ header.scrolled .logo {
   border-radius: 8px;
   flex: none;
   margin-left: 0.7rem;
+  overflow: hidden;
   position: relative;
 }
 .missions h1 {
@@ -1055,7 +1056,7 @@ form .form-end button:hover {
 }
 
 .details-popup .popup-content p {
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   font-size: 1rem;
   padding-top: 1rem;
   padding-left: 4rem;
