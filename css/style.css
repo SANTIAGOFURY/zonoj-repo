@@ -322,7 +322,7 @@ header.scrolled .logo {
 .showcase-image {
   height: 100%;
   width: 100%;
-  background-image: url("assets/best-friends-enjoying-time-together.jpg");
+  background-image: url("/assets/best-friends-enjoying-time-together.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
