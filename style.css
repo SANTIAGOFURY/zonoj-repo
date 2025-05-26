@@ -55,10 +55,9 @@ html {
 /* =================================================== */
 /* 3. Dark Mode */
 :root {
-  --color-primary: #2e1a47; /* Deep dark purple */
-  --color-secondary: #7c3aed; /* Vibrant purple */
-  --color-background: #1b122f; /* Very dark purple/indigo */
-
+  --color-primary: #2e1a47;
+  --color-secondary: #7c3aed;
+  --color-background: #1b122f;
   --space: 1rem;
   --bg: #09090b;
   --fg: #e3e3e3;
@@ -66,27 +65,26 @@ html {
   --surface-2: #27272a;
   --surface-3: #52525b;
   --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --box-shadow-light: 0 4px 12px rgba(255, 255, 255, 0.1);
+  --box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.6);
   --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
-
-  --color-text-primary: #d8c9ff; /* Light lavender */
-  --color-text-secondary: #a293c7; /* Soft muted purple */
-
-  --color-accent: #9b59b6; /* Medium purple accent */
-
-  --color-button-bg: #7c3aed; /* Vibrant purple button */
-  --color-button-hover: #5e2ca5; /* Darker purple hover */
-
-  --color-link: #9b59b6; /* Purple links */
-  --color-link-hover: #6f42c1; /* Slightly deeper purple */
-
-  --color-header-bg: #2e1a47; /* Same as primary for header */
-  --color-nav-bg: #3a2560; /* Dark purple for nav background */
-  --color-aside-bg: #3b2760; /* Slightly lighter dark purple */
-  --color-main-bg: #1b122f; /* Very dark purple background */
-
-  /* Added Colors */
-  --color-border: #4b3b67; /* Muted purple-gray for borders */
-  --color-footer-wave: #2a1842; /* Darker wave color to blend with background */
+  --color-text-primary: #d8c9ff;
+  --black-dark-box-shadow: rgba(0, 0, 0, 1);
+  --color-text-secondary: #a293c7;
+  --color-accent: #9b59b6;
+  --header-scrolled: #543679c8;
+  --color-button-bg: #7c3aed;
+  --popup-bg: rgba(44, 19, 56, 0.6);
+  --color-button-hover: #5e2ca5;
+  --color-link: #9b59b6;
+  --reset-color: #ffffff;
+  --color-link-hover: #6f42c1;
+  --color-header-bg: #2e1a47;
+  --color-nav-bg: #3a2560;
+  --color-aside-bg: #3b2760;
+  --color-main-bg: #1b122f;
+  --color-border: #4b3b67;
+  --color-footer-wave: #2a1842;
 }
 :root,
 body {
@@ -223,13 +221,13 @@ header .logo {
   min-width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #a293c792;
+  background-color: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 1.2rem;
-  box-shadow: 0 0 5px #7c3aed;
+  box-shadow: 0 0 5px var(--box-shadow-light);
   transition: 0.3s;
 }
 .toggle-btn:hover {
@@ -237,8 +235,8 @@ header .logo {
 }
 
 header.scrolled {
-  box-shadow: 0 5px 20px 0.1px rgba(255, 255, 255, 0.1);
-  background-color: #2e1a4793; /* fallback color */
+  box-shadow: 0 5px 20px 0.1px var(--box-shadow-light);
+  background-color: var(--header-scrolled); /* fallback color */
   backdrop-filter: blur(20px);
 }
 
@@ -285,7 +283,7 @@ header.scrolled .logo {
   display: inline-block;
   padding: 0.9rem 1.75rem;
   border-radius: 17px;
-  color: #fff;
+  color: var(--reset-color);
   background-color: var(--color-button-bg);
   text-transform: capitalize;
   font-size: 0.85rem;
@@ -413,7 +411,7 @@ header.scrolled .logo {
 }
 .members .overview-section div .profile {
   width: 6rem;
-  background-color: red;
+  border: 2px solid var(--color-border);
   height: 6rem;
   border-radius: 50%;
   position: absolute;
@@ -468,7 +466,7 @@ header.scrolled .logo {
   cursor: pointer;
   border-radius: 5px;
   background-color: var(--color-button-bg);
-  color: #fff;
+  color: var(--reset-color);
   transition: 0.3s;
 }
 .members .overview-section div .bnts button:hover {
@@ -526,7 +524,7 @@ header.scrolled .logo {
   cursor: pointer;
 }
 .missions button:active {
-  border: 2px solid #fff;
+  border: 2px solid var(--reset-color);
 }
 .missions button:hover {
   background-color: var(--color-button-hover);
@@ -745,13 +743,13 @@ body.shrink2 .TB-btn span {
   transform: rotate(-180deg);
 }
 .TB-btn:active {
-  border: 3px solid #fff;
+  border: 3px solid var(--reset-color);
 }
 .TB-btn:hover {
   background-color: var(--color-text-secondary);
 }
 footer .contact .CP {
-  color: #fff;
+  color: var(--reset-color);
 }
 footer .contact .links-div {
   display: flex;
@@ -765,7 +763,7 @@ footer .contact .links-div {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 19, 56, 0.6);
+  background: var(--popup-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -782,7 +780,7 @@ footer .contact .links-div {
   background: var(--color-main-bg);
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 1);
+  box-shadow: 0 8px 32px var(--black-dark-box-shadow);
   min-width: 30rem;
   max-width: 40rem;
   height: 30rem;
@@ -821,7 +819,7 @@ form .form-top input {
   outline: none;
   background-color: transparent;
   border: 2px solid gold;
-  color: #fff;
+  color: var(--reset-color);
 }
 form .form-center {
   display: flex;
@@ -839,7 +837,7 @@ form .form-center input {
   outline: none;
   background-color: transparent;
   border: 2px solid gold;
-  color: #fff;
+  color: var(--reset-color);
 }
 form .form-bottom {
   margin-top: 1rem;
@@ -856,7 +854,7 @@ form .form-bottom textarea {
   border-radius: 8px;
   text-align: center;
   outline: none;
-  color: #fff;
+  color: var(--reset-color);
   background-color: transparent;
   border: 2px solid gold;
 }
@@ -871,14 +869,14 @@ form .form-end button {
   height: 2.5rem;
   border: none;
   border-radius: 8px;
-  color: #fff;
+  color: var(--reset-color);
   background-color: var(--color-button-bg);
   border: 2px solid gold;
   transition: 300ms;
   cursor: pointer;
 }
 form .form-end button:active {
-  border: 3px solid #fff;
+  border: 3px solid var(--reset-color);
 }
 form .form-end button:hover {
   background-color: gold;
@@ -899,7 +897,7 @@ form .form-end button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 19, 56, 0.6);
+  background: var(--popup-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -913,10 +911,10 @@ form .form-end button:hover {
   pointer-events: auto;
 }
 .more-popup .popup-content {
-  background: var(--color-background, #fff);
+  background: var(--color-background, var(--reset-color));
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px var(--black-dark-box-shadow);
   min-width: 320px;
   max-width: 90vw;
   animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
@@ -934,7 +932,7 @@ form .form-end button:hover {
   background: transparent;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px var(--black-dark-box-shadow);
   max-width: 900px;
   width: 100%;
   border: 2px solid gold;
@@ -950,7 +948,7 @@ form .form-end button:hover {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #3b82f6;
+  border: 3px solid var(--color-border);
 }
 
 .more-popup .popup-content .member-details {
@@ -965,13 +963,13 @@ form .form-end button:hover {
 
 .more-popup .popup-content .member-details h4 {
   margin: 0.5rem 0;
-  color: #64748b;
+  color: var(--color-text-secondary);
   font-weight: 500;
 }
 
 .more-popup .popup-content .member-details p {
   margin: 0.8rem 0;
-  color: #8b96a5;
+  color: var(--color-text-primary);
   line-height: 1.6;
 }
 
@@ -983,11 +981,11 @@ form .form-end button:hover {
 }
 
 .more-popup .popup-content .skills span {
-  background: #e2e8f0;
+  background: var(--color-aside-bg);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  color: #1e293b;
+  color: var(--color-text-primary);
 }
 
 .more-popup .popup-content .social-links {
@@ -996,13 +994,13 @@ form .form-end button:hover {
 
 .more-popup .popup-content .social-links a {
   margin-right: 0.7rem;
-  color: #3b82f6;
+  color: var(--active-color);
   font-size: 1.2rem;
   text-decoration: none;
 }
 
 .more-popup .popup-content .social-links a:hover {
-  color: #2563eb;
+  color: var(--color-button-hover);
 }
 .more-popup .popup-content .social-links a svg {
   width: 2rem;
@@ -1013,7 +1011,7 @@ form .form-end button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 19, 56, 0.6);
+  background: var(--popup-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1030,14 +1028,13 @@ form .form-end button:hover {
   background: var(--color-background);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px var(--black-dark-box-shadow);
   min-width: 50rem;
   max-width: 90vw;
   height: 40rem;
   animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
   position: relative;
   overflow-y: hidden;
-
 }
 .details-popup .close-btn {
   position: absolute;
@@ -1057,9 +1054,11 @@ form .form-end button:hover {
 
 .details-popup .popup-content p {
   color: var(--color-text-primary);
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding-top: 1rem;
   padding-left: 4rem;
   padding-right: 4rem;
   margin-bottom: 1rem;
+  height: 33rem;
+  overflow: hidden;
 }
