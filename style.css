@@ -83,6 +83,10 @@ html {
   --color-nav-bg: #3a2560; /* Dark purple for nav background */
   --color-aside-bg: #3b2760; /* Slightly lighter dark purple */
   --color-main-bg: #1b122f; /* Very dark purple background */
+
+  /* Added Colors */
+  --color-border: #4b3b67; /* Muted purple-gray for borders */
+  --color-footer-wave: #2a1842; /* Darker wave color to blend with background */
 }
 :root,
 body {
@@ -490,7 +494,7 @@ header.scrolled .logo {
   overflow-x: scroll;
 }
 .missions .missions-section div {
-  width: calc(95% / 6);
+  width: calc(100% / 6);
   height: 80%;
   border: 2px solid var(--color-button-hover);
   border-radius: 8px;
@@ -747,6 +751,11 @@ body.shrink2 .TB-btn span {
 }
 footer .contact .CP {
   color: #fff;
+}
+footer .contact .links-div {
+  display: flex;
+  width: 19rem;
+  justify-content: space-between;
 }
 
 .contact-popup {
@@ -1017,14 +1026,17 @@ form .form-end button:hover {
   pointer-events: auto;
 }
 .details-popup .popup-content {
-  background: var(--color-background, #fff);
+  background: var(--color-background);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  min-width: 320px;
+  min-width: 50rem;
   max-width: 90vw;
+  height: 40rem;
   animation: popupIn 0.4s cubic-bezier(0.4, 2, 0.6, 1);
   position: relative;
+  overflow-y: hidden;
+
 }
 .details-popup .close-btn {
   position: absolute;
@@ -1037,4 +1049,16 @@ form .form-end button:hover {
 }
 .details-popup .close-btn:hover {
   color: #ff0066;
+}
+.details-popup .popup-content h2 {
+  color: var(--color-text-primary);
+}
+
+.details-popup .popup-content p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 1rem;
 }

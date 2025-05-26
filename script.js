@@ -50,8 +50,6 @@ Back_btn.addEventListener("click", () => {
   }, 200); // Adjust timeout based on animation duration
 });
 
-
-
 class Pixel {
   constructor(canvas, context, x, y, color, speed, delay) {
     this.width = canvas.width;

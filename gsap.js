@@ -68,7 +68,7 @@ gsap.utils.toArray(".overview-section > div").forEach((member, i) => {
 // ...existing code...
 
 // Animate .mission cards with scale and rotation effect
-gsap.utils.toArray('.missions-section .mission').forEach((mission, i) => {
+gsap.utils.toArray(".missions-section .mission").forEach((mission, i) => {
   gsap.from(mission, {
     opacity: 0,
     scale: 0.8,
@@ -79,8 +79,8 @@ gsap.utils.toArray('.missions-section .mission').forEach((mission, i) => {
     scrollTrigger: {
       trigger: mission,
       start: "top 85%",
-      toggleActions: "play none none reset"
-    }
+      toggleActions: "play none none reset",
+    },
   });
 });
 
@@ -97,8 +97,8 @@ gsap.from(".missions h1 span", {
   scrollTrigger: {
     trigger: ".missions h1",
     start: "top 85%",
-    toggleActions: "play none none reset"
-  }
+    toggleActions: "play none none reset",
+  },
 });
 gsap.from(".info h1 span", {
   opacity: 0,
@@ -120,7 +120,7 @@ gsap.to(".info .blob1", {
   duration: 4,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 gsap.to(".info .blob2", {
   y: -40,
@@ -129,7 +129,7 @@ gsap.to(".info .blob2", {
   duration: 4.5,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 const wavePath = document.getElementById("wavePath");
@@ -138,30 +138,29 @@ const wave1 = "M0,160 C480,360 960,-40 1440,160 L1440,320 L0,320 Z";
 const wave2 = "M0,120 C480,-40 960,360 1440,120 L1440,320 L0,320 Z";
 const wave3 = "M0,200 C480,-80 960,400 1440,200 L1440,320 L0,320 Z";
 
+wavePath.setAttribute("d", wave1); // Start with first shape
 
-  wavePath.setAttribute("d", wave1); // Start with first shape
+const animateWave = () => {
+  gsap.to(wavePath, {
+    duration: 2,
+    attr: { d: wave2 },
+    ease: "power1.inOut",
+    onComplete: () => {
+      gsap.to(wavePath, {
+        duration: 2,
+        attr: { d: wave3 },
+        ease: "power1.inOut",
+        onComplete: () => {
+          gsap.to(wavePath, {
+            duration: 2,
+            attr: { d: wave1 },
+            ease: "power1.inOut",
+            onComplete: animateWave, // loop
+          });
+        },
+      });
+    },
+  });
+};
 
-  const animateWave = () => {
-    gsap.to(wavePath, {
-      duration: 2,
-      attr: { d: wave2 },
-      ease: "power1.inOut",
-      onComplete: () => {
-        gsap.to(wavePath, {
-          duration: 2,
-          attr: { d: wave3 },
-          ease: "power1.inOut",
-          onComplete: () => {
-            gsap.to(wavePath, {
-              duration: 2,
-              attr: { d: wave1 },
-              ease: "power1.inOut",
-              onComplete: animateWave // loop
-            });
-          }
-        });
-      }
-    });
-  };
-
-  animateWave(); // Start animation
+animateWave(); // Start 
