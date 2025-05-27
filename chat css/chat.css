@@ -38,6 +38,11 @@ html {
 /* =================================================== */
 /* ============== 🔧 GLOBAL RESET 🔧 ================== */
 /* =================================================== */
+html, body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 *,
 *::after,
 *::before {
@@ -45,6 +50,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: Poppins, sans-serif;
+  transition: all 100ms ease-in-out;
 }
 /* Hide vertical scrollbar for missions-section */
 .missions .missions-section::-webkit-scrollbar {
@@ -88,8 +94,7 @@ html {
 body {
   background-color: var(--bg-main);
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 100%;overflow: auto;
 }
 footer {
   position: fixed;
@@ -118,7 +123,7 @@ header .topwave {
   left: 50%;
   border: 2px solid var(--border-main);
   transform: translate(-50%, -50%);
-  z-index: -1;
+  /* z-index: -1;                               this shit cause hover problems  */
   border-radius: 10px;
   display: flex;
   align-items: stretch;
@@ -234,7 +239,35 @@ header .topwave {
 .container .two.expand-left {
   width: 75% !important;
 }
-
+.container .one.shrink-left .one-top {
+  justify-content: center;
+}
+.container .one.shrink-left .one-top .verified {
+  display: none;
+}
+.container .one.shrink-left .one-top .code {
+  display: none;
+}
+.container .one.shrink-left .one-center {
+  justify-content: center;
+}
+.container .one.shrink-left .one-center .vip-contact h3,
+.container .one.shrink-left .one-center .vip-contact .call,
+.container .one.shrink-left .one-center .vip-contact .dot {
+  display: none;
+}
+.container .one.shrink-left .one-bottom {
+  justify-content: center;
+}
+.container .one.shrink-left .one-bottom .groups .group2,
+.container .one.shrink-left .one-bottom .groups .group3 {
+  display: none;
+}
+.container .one.shrink-left .one-end h3,
+.container .one.shrink-left .one-end .theme,
+.container .one.shrink-left .one-end .log {
+  display: none;
+}
 /* Shrink right */
 .container .three.shrink-right {
   width: 5% !important;
@@ -328,7 +361,7 @@ header .topwave {
   justify-content: space-evenly;
 }
 .container .one .one-bottom .groups div {
-  width: calc(80% / 3);
+  width: 4rem;
   height: 100%;
   background-color: var(--reset-color);
   border-radius: 100%;
@@ -372,4 +405,160 @@ header .topwave {
 
 .container .one .one-end .log:hover {
   background-color: red;
+}
+
+.container .two {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 10% 80% 10%;
+  position: relative;
+}
+.container .two .two-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .two .two-top .contactor {
+  width: 20%;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid var(--border-main);
+}
+.container .two .two-top .contactor .profile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--reset-color);
+}
+.container .two .two-top .contactor h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+.container .two .two-top .info-contactor {
+  width: 59%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid var(--border-main);
+  border-radius: 1rem;
+}
+.container .two .two-top .info-contactor h3 {
+  color: var(--text-primary);
+}
+.container .two .two-top .info-contactor h4 {
+  color: var(--text-secondary);
+}
+.container .two .two-top .contactor-tools {
+  width: 19%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+  border: 2px solid var(--border-main);
+}
+.container .two .two-top .contactor-tools div {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container .two .two-top .contactor-tools div span {
+  color: var(--text-primary);
+}
+.container .two .two-top .contactor-tools div:hover {
+  background-color: red !important;
+}
+.container .two .two-bottom {
+  width: 80%;
+  position: absolute;
+  height: 4rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  pointer-events: auto;
+  border-radius: 25px;
+  border: 1px solid var(--border-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999; /* Try something high to test */
+}
+.container .two .two-bottom .msg-tools {
+  width: 25%;
+  height: 4rem;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .two .two-bottom .msg-tools a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.container .two .two-bottom .msg-tools a:active {
+  background-color: var(--btn-hover-bg);
+}
+.container .two .two-bottom .msg {
+  width: 65%;
+  height: 100%;
+  border-left: 1px solid var(--border-main);
+  border-right: 1px solid var(--border-main);
+}
+.container .two .two-bottom .msg textarea {
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: var(--text-primary);
+  text-align: start;
+  padding-left: 2rem;
+  padding-top: 1.3rem;
+  height: 100%;
+  border-left: 1px solid var(--border-main);
+  border-right: 1px solid var(--border-main);
+  z-index: 3456789;
+  resize: none;
+}
+.container .two .two-bottom .msg-send {
+  width: 10%;
+  height: 100%;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .two .two-bottom .msg-send a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+  border-top-right-radius: 25px;
+}
+.container .two .two-bottom .msg-send a:active {
+  background-color: var(--btn-hover-bg);
 }
